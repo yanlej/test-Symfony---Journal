@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Article{% endblock %}
+
+{% block body %}
+
+    {% for res in app.flashes('success') %}
+
+        <div class="alert alert-success">
+
+            {{ res }}
+
+        </div>
+    
+    {% endfor %}
+
+<div class = "container-fluid">
+
+    <div class="row">
+
+        <h1 class = "text-center">Liste des articles</h1>
+
+    </div>
+
+    <select class="form-select selectCat" name="filtreCat" id="filtreCat" onChange = "if(this.value) window.location.replace(this.value)">
+
+            <option value="">Choisir catégorie</option>
+            <option value="http://localhost:8000/article">Tous les articles</option>
+            {% for cat in categories %}
+            <option value="http://localhost:8000/article/categorie/{{ cat.id }}">{{cat.nom_cat}}</option>
+            {% endfor %}
+
+    </select>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        {% for article in articles %}
+
+            <div class="col">
+
+                <div class="card h-100">
+
+                    <img src='{{ asset("uploads/images/" ~ article.image) }}' class="card-img-top imgCard" alt="image superbe">
+
+                        <div class="card-body">
+
+                            <h2 class="card-title text-center">{{ article.title }}</h2>
+                            <p class="card-text text-center">{{ article.content | u.truncate(40, " ...", false) }}</p>
+                            <p class="text-center"><small class = "text-muted"><strong>Auteur :</strong> {{ article.author }}</small></p>
+                            <p class="text-center"><small class = "text-muted"><strong>Catégorie :</strong> {{ article.categorie }}</small></p>
+                            
+                            <div class = "card-footer">
+                                <a href="{{ path('article_show', { "id": article.id }) }}" class = "btn btn-outline-dark offset-3">Détails</a>
+                                <a href="{{ path('article_edit', { "id": article.id }) }}" class = "btn btn-outline-info offset-2">Modifier</a>
+                            </div>
+
+                        </div>
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <h1> Ancun article dans cette catégorie !</h1>
+
+        {% endfor %}
+
+    </div>
+
+    
+
+</div>
+
+{% endblock %}

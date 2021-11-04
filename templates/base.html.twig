@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Test Symfony{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+            <link href="{{asset('assets/css/app.css')}}" rel="stylesheet">
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+
+        {% block nav %}
+        
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="{{ path('home') }}">Journal-Symfony</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarColors02">
+
+                        <ul class="navbar-nav me-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('article_index') }}">Liste Articles</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('article_new') }}">Publier</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('categories_new') }}">Ajout catégorie</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('about') }}">About</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        
+        {% endblock %}
+
+        </br>
+
+        {% block body %}{% endblock %}
+    </body>
+</html>

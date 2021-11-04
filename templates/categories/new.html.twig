@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Publication catégorie{% endblock %}
+
+{% block body %}
+
+    <div class = "container-fluid">
+
+        <div class="row">
+
+            <h1 class = "text-center">Publier une nouvelle catégorie</h1>
+
+        </div>
+
+    </div>
+
+    {{ include('categories/_form.html.twig') }}
+
+    <a href="{{ path('categories_index') }}" class="btn btn-outline-secondary btnForms1">Retour à la liste des articles</a>
+    
+{% endblock %}

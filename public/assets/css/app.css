@@ -1,0 +1,78 @@
+.imgCard {
+
+    height: 250px;
+}
+
+.imgDetails{
+
+    height: 250px;
+    width: auto;
+}
+
+.form {
+
+    margin-top: 50px;
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.btnForms{
+
+    margin-top: 20px;
+    margin-left: 733px;
+}
+
+.btnForms1 {
+
+    margin-top: 20px;
+    margin-left: 663px;
+}
+
+.imgAcc{
+
+    width: 100%;
+    height: 590px;
+}
+
+.contentAcc{
+
+    margin-top: 180px;
+}
+
+.titreAcc{
+
+    margin-top: -150px;
+    margin-bottom: 125px;
+    font-size: 70px;
+    text-shadow: 2px 2px grey;
+    color: #262c3a;
+}
+
+.selectCat {
+
+    width: 170px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 665px;
+}
+
+.btnForms2 {
+
+    margin-top: 10px;
+    margin-left: 150px;
+}
+
+.btnForms3 {
+
+    margin-left: 150px;
+}
+
+.invalid-feedback{
+
+    background-color: gainsboro;
+    font-weight: bold;
+}

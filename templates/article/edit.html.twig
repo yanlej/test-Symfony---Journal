@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Article{% endblock %}
+
+{% block body %}
+
+    <div class = "container-fluid">
+
+        <div class="row">
+
+            <h1 class = "text-center">Modifier l'article</h1>
+
+        </div>
+
+    </div>
+
+    {{ include('article/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('article_index') }}" class="btn btn-outline-secondary btnForms1">Retour à la liste des articles</a>
+
+{% endblock %}
